@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML CSS Text</title>
+    <style>
+        div{
+            height: 100vh; /*100vh하면 한칸이 전체 너비에 맞추어 진다.*/
+        }
+        div[name=n1] { background-color: red;}
+        div[name=n3] { background-color: yellow;}
+        div[name=n2], div[name=n4] {background-color: brown;}
+    </style>
 </head>
 <body>
     <h1>홍차</h1>
@@ -23,6 +31,28 @@
             <td>c3</td>
         </tr>
     </table>
+    <hr>
+    <p>절대경로<br>
+        <!--절대경로 하이퍼링크 걸어서 네이버 홈페이지로 이동-->
+        <a href="http://www.naver.com">네이버</a>
+        <a href="http://google.com">구글</a>
+    </p>
+    <hr> <!-- 문단과 문단 사이 선을 그어주는 태그 hr-->
+    <p>상대경로<br> <!--줄 바꿈 태그 br-->
+        <!--상대경로(프로젝트 안 폴더 혹은 파일) 지정해서 하이퍼링크 걸어줌-->
+        <a href="../day01/hello.html">hello</a>
+    </p>
+    <p>
+        아이디 경로<br>
+        <a href="#n1">N1</a>
+        <a href="#n2">N2</a>
+        <a href="#n3">N3</a>
+        <a href="#n4">N4</a>
+    </p>
+    <div name="n1" id="n1">N1</div>
+    <div name="n2" id="n2">N2</div>
+    <div name="n3" id="n3">N3</div>
+    <div name="n4" id="n4">N4</div>
     
 </body>
 </html>
