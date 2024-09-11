@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+    
+        // 이벤트 핸들러를 이용해서 문서의 모든 요소가 로드되며 실행되도록 할 수 있다.
+        // 여기서 window라고 하는 것은 자바스크립트의 최상위 객체이고
+        
+        // <console.dir(); 와 console.log();>
+        // console.log(); -> Element를 직접 찍어주는 것이고
+        // console.dir(); -> 객체로 찍어주는 것이다.
+        
+        // console.dir();에 window를 찍어주면 console.dir(window);
+        // console에 window가 뜨는데 열어보면 엄청 많은 요소들이 나온다.
+        // 이 요소들의 원인을 보면 document가 있고 element id, 등이 있다.
+        
+        // console.dir(window.document);라고 하면 
+        // window 안에 있는 document 안 요소들이 나오게 된다.
+        // 조상을 보면 제일 위에 window가 있고 그 밑에 document가 있고 
+        // 그 밑에 getElementById();가 있다는 것이다.
+        
+        // 이런 것들이 있는데 이런것들이 어디에 있냐며는 맨 밑에 prototype에 다 들어가 있다.
+        // 이게 상속 받은 것이라서 window에 있는 것도 document에 있는 것도 다 쓸 수 있다.
+        
+        console.dir(window.document);
+        // id 값으로 태그 Element를 객체로 참조한다.
+        var demo = document.getElementById('demo');
+        console.log(demo);
+    </script>
 </head>
 <body>
     <p id="demo">JavaScript can change HTML content.</p>
@@ -11,11 +37,6 @@
     <!-- 인라인 적용 방식 -->
     <button type="button" id="changeBtn">Change</button>
     <button type="button" id="resetBtn">Reset</button>
-
-    <script>
-        var demo = document.getElementById('demo');
-        console.log(demo);
-    </script>
 </body>
 </html>
 
@@ -25,6 +46,4 @@
 <!--console.log(demo);-->
 <!--콘솔에 선택된 demo 요소를 출력한다. 
 이를 통해 요소가 제대로 선택되었는지 확인할 수 있다.-->
-
-<!--p 태그의 id를 demo라고 주고 그 demo를 getElement 했다는 것이다. ById로-->
-<!--2분 52초-->
+<!-- p 태그의 id를 demo라고 주고 그 demo를 getElement 했다는 것이다. ById로 -->
