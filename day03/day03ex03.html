@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function() {
+            var memoTxt = document.getElementById('memoTxt');
+            // querySelector('')은 CSS의 선택기(selector)을 그래로 사용 가능.
+            // id는 # 으로 시작
+            // class는 . 으로 시작
+            // 속성은 []로 구분해서 사용한다.
+            // 태그는 그냥 태그 이름으로 그대로 사용한다...
+            // var demo = document.querySelector('.Btn');
+            var demo = document.querySelector('#demo');
+            var clickBtn = document.querySelector('#clickBtn');
+            var resetBtn = document.querySelector('#resetBtn');
+
+            // 한번 확인해보자. TDD : 테스트 주도 개발...
+            // console.log(memoTxt, demo, clickBtn, resetBtn);
+
+            // ### 의사 코드 ###
+            // 0. 이벤트 핸들러 만들기
+            // click은 이벤트 이름이고
+            // clickBtn.onclick = function(event) {}과 동일하다.
+            // console.dir(clickBtn);
+            clickBtn.addEventListener('click', function(event) {
+                // 1. 클릭 되는지 확인
+                // alert('버튼 클릭 했다.');
+                //console.log('버튼 클릭했다!');
+
+                // 2. 메모 input의 데이터 가져오기
+
+                // input에 있는 데이터는 
+                // var memoTxt = document.getElementById('memoTxt');
+                // 이다.
+                // 그런데 console.log에 memoTxt를 그냥 찍으면 dom이라서 콘솔에 출력이 된다.
+                // console.log(memoTxt);
+
+                // 즉 memoTxt는 input이기 때문에 input 요소에는 value라고 하는 속성이 있다.
+                // memoTxt에서 value가 있는지 없는지 정확히 확인을 할려면
+                // console.dir(memoTxt)로 확인을 하면된다.
+                // console.dir(memoTxt.value);
+
+                // 선원 시 키워드 없으면 window.memoTxtVal
+                // var는 스코프 범위가 함수 단위이다.
+                // let은 자바처럼 스코프 범위가 블럭단위이다.
+                var memoTxtVal = memoTxt.value;
+
+                // 3. 가져온 데이터를 텍스트로 변경
+                demo.innerHTML = memoTxtVal;
+
+                // 4. 초기화 시키기
+                memoTxt.value = ""
+                // 초기화 후 커서가 들어간다.
+                memoTxt.focus();
+            });
+            
+        }
+
+    </script>
+</head>
+<body>
+    메모: <input type="text" id="memoTxt" value="memo 값">
+    <p id="demo">JavaScript can change HTML content.</p>
+
+    <!-- 인라인 적용 방식 
+    - <button type="button" id="clickBtn" class="btn">Click</button>
+    -->
+    <button type="button" id="clickBtn" class="btn">Click</button>
+    <button type="button" id="resetBtn">Reset</button>
+
+</body>
+</html>
