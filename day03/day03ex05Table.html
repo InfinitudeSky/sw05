@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function() {
+            var memoTxt = document.getElementById('memoTxt');
+            
+            var demo = document.querySelector('#demo');
+            var clickBtn = document.querySelector('#clickBtn');
+            var resetBtn = document.querySelector('#resetBtn');  
+
+            var handleEvent = function(event) {
+                demo.innerHTML += '<br>' + memoTxt.value;
+                memoTxt.value = "";
+                memoTxt.focus();
+            }
+            clickBtn.addEventListener('click', handleEvent);
+
+            memoTxt.onkeyup = function(event) {
+                if(event.keyCode === 13) {
+                    handleEvent(event);
+                }
+            }
+            
+            
+        }
+
+    </script>
+</head>
+<body>
+    메모: <input type="text" id="memoTxt" value="memo 값">
+    <p id="demo">JavaScript can change HTML content.</p>
+
+    <!-- 인라인 적용 방식 -->
+    <button type="button" id="clickBtn" class="btn">Click</button>
+    <button type="button" id="resetBtn">Reset</button>
+
+</body>
+</html>
